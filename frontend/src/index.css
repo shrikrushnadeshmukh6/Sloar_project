@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-night text-paper font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    background: #FFB238;
+    color: #0A0F1E;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    @apply px-6 md:px-10 lg:px-16;
+  }
+  .section-py {
+    @apply py-20 md:py-28;
+  }
+  .eyebrow {
+    @apply font-mono uppercase tracking-[0.2em] text-xs text-gold;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-display font-medium text-night transition-transform duration-300 hover:scale-[1.03] hover:shadow-glow active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-night-line px-7 py-3.5 font-display font-medium text-paper transition-colors duration-300 hover:border-gold hover:text-gold;
+  }
+  .card {
+    @apply rounded-2xl border border-night-line bg-night-card;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
