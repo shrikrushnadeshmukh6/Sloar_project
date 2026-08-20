@@ -94,16 +94,16 @@ router.post("/", async (req, res) => {
     });
   }
 
-  try {
-    await notifyNewEnquiry(enquiry);
-  } catch (err) {
-    console.error("Email notification failed:", err.message);
-    return res.status(503).json({
-      ok: false,
-      message:
-        "Your enquiry was saved, but the email notification failed. Please try again shortly.",
-    });
-  }
+  // try {
+  //   await notifyNewEnquiry(enquiry);
+  // } catch (err) {
+  //   console.error("Email notification failed:", err.message);
+  //   return res.status(503).json({
+  //     ok: false,
+  //     message:
+  //       "Your enquiry was saved, but the email notification failed. Please try again shortly.",
+  //   });
+  // }
 
   return res.status(201).json({
     ok: true,
