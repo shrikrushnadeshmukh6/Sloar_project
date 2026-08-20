@@ -1,8 +1,7 @@
 import axios from "axios";
 
-// In dev, Vite proxies /api to the Node/Express backend (see vite.config.js).
-// In production, set VITE_API_URL to your deployed backend URL.
-const baseURL = import.meta.env.VITE_API_URL || "/api";
+// Seedha live backend URL hardcode kar dein production ke liye
+const baseURL = "https://sloar-project.onrender.com/api";
 
 export const api = axios.create({ baseURL });
 
